@@ -12,7 +12,7 @@ public static class PointsGenerator
 
         for (var i = 0; i < count; i++)
         {
-            points.Add(new Point(RandomNumberGenerator.GetInt32(0, 100), RandomNumberGenerator.GetInt32(0, 100)));
+            points.Add(new Point(RandomNumberGenerator.GetInt32(0, 100), RandomNumberGenerator.GetInt32(0, 150)));
         }
 
         return points;

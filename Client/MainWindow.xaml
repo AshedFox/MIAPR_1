@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowState="Maximized"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="MediumPurple">
         <Grid.RowDefinitions>
@@ -36,11 +36,14 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Name="ReInitButton" Content="Initialize" Padding="10" FontSize="20" 
                     Foreground="#1c1c1c" FontWeight="Bold" Click="ReInitButton_OnClick"/>
-            <Button Grid.Column="1" Name="IterateButton" Content="Iterate" Padding="10" FontSize="20" 
-                    Foreground="#1c1c1c" FontWeight="Bold" IsEnabled="False" Click="IterateButton_OnClick"/>
+            <Button Grid.Column="1" Name="IterateOnceButton" Content="Iterate Once" Padding="10" FontSize="20" 
+                    Foreground="#1c1c1c" FontWeight="Bold" IsEnabled="False" Click="IterateOnceButton_OnClick"/>
+            <Button Grid.Column="2" Name="IterateAllButton" Content="Iterate All" Padding="10" FontSize="20" 
+                    Foreground="#1c1c1c" FontWeight="Bold" IsEnabled="False" Click="IterateAllButton_OnClick"/>
         </Grid>
         <Grid Grid.Row="3" Background="Gainsboro">
             <Grid.ColumnDefinitions>
@@ -48,7 +51,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="Is End?" FontSize="16"/>
-            <CheckBox Grid.Column="1" IsEnabled="False" Name="KMeansStatus" VerticalContentAlignment="Center"/>
+            <CheckBox Grid.Column="1" IsEnabled="False" Checked="KMeansStatus_OnChecked" Name="KMeansStatus" VerticalContentAlignment="Center"/>
         </Grid>
     </Grid>
 </Window>

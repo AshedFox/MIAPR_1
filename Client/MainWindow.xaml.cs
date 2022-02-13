@@ -38,7 +38,7 @@ namespace Client
 
         private void RedrawKMeansImage()
         {
-            var colorStep = (int)Math.Ceiling((decimal)255 / _kMeans.Clusters.Count);
+            var colorStep = (int)Math.Floor((decimal)255 / (_kMeans.Clusters.Count - 1));
             var clusters = _kMeans.Clusters;
             
             var drawingGroup = new DrawingGroup();
@@ -67,14 +67,22 @@ namespace Client
                 Convert.ToInt32(ClustersCountInput.Text), 
                 PointsGenerator.GeneratePoints(Convert.ToInt32(PointsCountInput.Text))
             );
-            IterateButton.IsEnabled = true;
+            KMeansImage.Source = null;
+            IterateOnceButton.IsEnabled = true;
+            IterateAllButton.IsEnabled = true;
             KMeansStatus.IsChecked = false;
         }
 
-        private void IterateButton_OnClick(object sender, RoutedEventArgs e)
+        private void IterateOnceButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            KMeansStatus.IsChecked = _kMeans.Iterate();
+            RedrawKMeansImage();
+        }
+
+        private void IterateAllButton_OnClick(object sender, RoutedEventArgs e)
         {
             bool isEnd;
-            
+
             do
             {
                 isEnd = _kMeans.Iterate();
@@ -83,7 +91,7 @@ namespace Client
 
             KMeansStatus.IsChecked = true;
         }
-
+        
         private void ClustersCountInput_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !char.IsDigit(Convert.ToChar(e.Text));
@@ -92,6 +100,15 @@ namespace Client
         private void PointsCountInput_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !char.IsDigit(Convert.ToChar(e.Text));
+        }
+
+        private void KMeansStatus_OnChecked(object sender, RoutedEventArgs e)
+        {
+            if (KMeansStatus.IsChecked is true)
+            {
+                IterateOnceButton.IsEnabled = false;
+                IterateAllButton.IsEnabled = false;
+            }
         }
     }
 }
