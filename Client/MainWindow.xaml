@@ -1,0 +1,54 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="MediumPurple">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Name="KMeansImage"/>
+        <Grid Grid.Row="1" Background="LightSteelBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Count of clusters" FontSize="18"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Name="ClustersCountInput" FontSize="16" Background="Azure" Padding="5"
+                     Text="2" HorizontalContentAlignment="Right" MaxLength="2"
+                     PreviewTextInput="ClustersCountInput_OnPreviewTextInput"/>
+            <Label Grid.Row="1" Grid.Column="0"  Content="Count of points" FontSize="18"/>
+            <TextBox  Grid.Row="1" Grid.Column="1" Name="PointsCountInput" FontSize="16" Background="Azure" Padding="5"
+                     Text="1000" HorizontalContentAlignment="Right" MaxLength="6"
+                     PreviewTextInput="PointsCountInput_OnPreviewTextInput"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="ReInitButton" Content="Initialize" Padding="10" FontSize="20" 
+                    Foreground="#1c1c1c" FontWeight="Bold" Click="ReInitButton_OnClick"/>
+            <Button Grid.Column="1" Name="IterateButton" Content="Iterate" Padding="10" FontSize="20" 
+                    Foreground="#1c1c1c" FontWeight="Bold" IsEnabled="False" Click="IterateButton_OnClick"/>
+        </Grid>
+        <Grid Grid.Row="3" Background="Gainsboro">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Is End?" FontSize="16"/>
+            <CheckBox Grid.Column="1" IsEnabled="False" Name="KMeansStatus" VerticalContentAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{7194C22C-476A-4646-A552-B38C8A036273}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KMeansLib", "KMeansLib\KMeansLib.csproj", "{549CB039-9C9B-474F-A215-6796B602B972}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7194C22C-476A-4646-A552-B38C8A036273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7194C22C-476A-4646-A552-B38C8A036273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7194C22C-476A-4646-A552-B38C8A036273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7194C22C-476A-4646-A552-B38C8A036273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{549CB039-9C9B-474F-A215-6796B602B972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{549CB039-9C9B-474F-A215-6796B602B972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{549CB039-9C9B-474F-A215-6796B602B972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{549CB039-9C9B-474F-A215-6796B602B972}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
